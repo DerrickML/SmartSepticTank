@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	Vertical Gauge Example - HTML5 jQuery Linear Gauge JavaScript Plugin
+</title>
+	<link rel="stylesheet" type="text/css" href="../../css/dataviz.gauges.css" />
+	<script src="../../js/dataviz.gauges.min.js" type="text/javascript"></script>
+	
+	<script lang="javascript" type="text/javascript">
+		var barMarkerGradient = {
+			type: 'linearGradient',
+			x0: 0,
+			y0: 0.5,
+			x1: 1,
+			y1: 0.5,
+			colorStops: [{ offset: 0, color: '#FF3366' },
+						 { offset: 1, color: '#B2183E' }]
+		};
+
+		var needleGradient = {
+			type: 'linearGradient',
+			x0: 0.5,
+			y0: 0,
+			x1: 0.5,
+			y1: 1,
+			colorStops: [{ offset: 0, color: '#4F6169' },
+						 { offset: 1, color: '#252E32' }]
+		};
+
+		var linearGauge = new DataViz.LinearGauge({
+			orientation: 'vertical',
+			background: '#F7F7F7',
+			border: {
+				padding: 10,
+				lineWidth: 4,
+				strokeStyle: '#76786A'
+			},
+			tooltips: {
+				disabled: false,
+				highlighting: true
+			},
+			animation: {
+				duration: 1
+			},
+			scales: [
+				{
+					reversed: false,
+					minimum: 0,
+					maximum: 100,
+					interval: 10,
+					labels: {
+						offset: 0.2
+					},
+					majorTickMarks: {
+						lineWidth: 2,
+						offset: 0.38,
+						length: 12
+					},
+					minorTickMarks: {
+						visible: true,
+						lineWidth: 2,
+						interval: 2,
+						offset: 0.42
+					},
+					needles: [
+						{
+							type: 'pointer',
+							value: 70,
+							fillStyle: needleGradient,
+							innerOffset: 0.60,
+							outerOffset: 0.90
+						}
+					],
+					barMarkers: [
+						{
+							value: 80,
+							fillStyle: barMarkerGradient,
+							innerOffset: 0.58,
+							outerOffset: 0.75
+						}
+					]
+				}
+			]
+		});
+
+		linearGauge.addEventListener('tooltipFormat', function (e, data) {
+			var tooltip = '<b>Element: ' + data.elementType + '</b> ' + '<br />Value: ' + data.value;
+			e.result = tooltip;
+		});
+
+		linearGauge.write('container');
+	</script>
+
+</head>
+<body>
+	<div>
+		<div id="container" style="width: 110px; height: 400px;">
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	LegendItem Mouse Events Example - JavaScript Chart by DataViz Charts
+</title>
+	<link rel="stylesheet" type="text/css" href="../../css/dataviz.chart.css" />
+	<link rel="stylesheet" type="text/css" href="../../themes/le-frog/styles.css" />
+	<script src="../../js/dataviz.chart.min.js" type="text/javascript"></script>
+	
+	<script lang="javascript" type="text/javascript">
+
+		var chart = new DataViz.Chart({
+			title: "LegendItem Mouse Events",
+			legend: {
+				itemsCursor: 'pointer'
+			},
+			animation: { duration: 1 },
+			series: [
+				{
+					type: 'column',
+					title: 'Series 1',
+					data: [['A', 46], ['B', 35], ['C', 68], ['D', 30],
+						   ['E', 27], ['F', 85], ['D', 43], ['H', 29]]
+				},
+				{
+					type: 'column',
+					title: 'Series 2',
+					data: [['A', 69], ['B', 57], ['C', 86], ['D', 23],
+						   ['E', 70], ['F', 60], ['D', 88], ['H', 22]]
+				}
+			]
+		});
+		chart.write('container');
+
+		chart.addEventListener('legendItemMouseEnter', function (e, data) {
+			var eventsDiv = document.getElementById('eventsDiv');
+			eventsDiv.innerHTML += '<div>legendItemMouseEnter</div>';
+			eventsDiv.scrollTop = eventsDiv.scrollHeight;
+
+			displayDataOptions(data);
+		});
+
+		chart.addEventListener('legendItemMouseLeave', function (e, data) {
+			var eventsDiv = document.getElementById('eventsDiv');
+			eventsDiv.innerHTML += '<div>legendItemMouseLeave</div>';
+			eventsDiv.scrollTop = eventsDiv.scrollHeight;
+		});
+
+		chart.addEventListener('legendItemMouseMove', function (e, data) {
+			var eventsDiv = document.getElementById('eventsDiv');
+			eventsDiv.innerHTML += '<div>legendItemMouseMove</div>';
+			eventsDiv.scrollTop = eventsDiv.scrollHeight;
+		});
+
+		chart.addEventListener('legendItemMouseDown', function (e, data) {
+			var eventsDiv = document.getElementById('eventsDiv');
+			eventsDiv.innerHTML += '<div>legendItemMouseDown</div>';
+			eventsDiv.scrollTop = eventsDiv.scrollHeight;
+		});
+
+		chart.addEventListener('legendItemMouseUp', function (e, data) {
+			var eventsDiv = document.getElementById('eventsDiv');
+			eventsDiv.innerHTML += '<div>legendItemMouseUp</div>';
+			eventsDiv.scrollTop = eventsDiv.scrollHeight;
+		});
+
+		chart.addEventListener('legendItemClick', function (e, data) {
+			var eventsDiv = document.getElementById('eventsDiv');
+			eventsDiv.innerHTML += '<div>legendItemClick</div>';
+			eventsDiv.scrollTop = eventsDiv.scrollHeight;
+		});
+
+		chart.addEventListener('legendItemDblClick', function (e, data) {
+			var eventsDiv = document.getElementById('eventsDiv');
+			eventsDiv.innerHTML += '<div>legendItemDblClick</div>';
+			eventsDiv.scrollTop = eventsDiv.scrollHeight;
+		});
+
+		function displayDataOptions(data) {
+			var list = document.getElementById('listBlock');
+
+			list.innerHTML = '<li>data.chart=' + data.chart + '</li>' +
+							'<li>data.series=' + data.series + '</li>' +
+							'<li>data.shape=' + data.shape + '</li>';
+		}
+	</script>
+
+</head>
+<body>
+	<div>
+		<table>
+			<tr>
+				<td>
+					<div id="container" style="width: 400px; height: 300px;">
+					</div>
+				</td>
+				<td>
+					<b>Events:</b><br />
+					<div id="eventsDiv" class="box" style="width: 160px; height: 250px; overflow: auto; border: 1px solid #E2EFDE; padding: 10px">
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<b>Event 'data' parameter contains:</b>
+		<ul id='listBlock'>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+    Image Markers Example - JavaScript Chart by DataViz Charts
+</title>
+	<link rel="stylesheet" type="text/css" href="../../css/dataviz.chart.css" />
+	<link rel="stylesheet" type="text/css" href="../../themes/le-frog/styles.css" />
+	<script src="../../js/dataviz.chart.min.js" type="text/javascript"></script>
+	
+    <script lang="javascript" type="text/javascript">
+        
+
+            var background = {
+                type: 'linearGradient',
+                x0: 0,
+                y0: 0,
+                x1: 0,
+                y1: 1,
+                colorStops: [{ offset: 0, color: '#d2e6c9' },
+                             { offset: 1, color: 'white' }]
+            };
+
+            var chart = new DataViz.Chart({
+                title: { text: 'Image Markers' },
+                border: { strokeStyle: '#6ba851' },
+                background: background,
+                series: [
+                    {
+                        type: 'line',
+                        title: 'Line',
+                        data: [['A', 62, '../images/markers/sun.png'],
+                               ['B', 60, '../images/markers/snow.png'],
+                               ['C', 68, '../images/markers/sun.png'],
+                               ['D', 58, '../images/markers/snow.png'],
+                               ['E', -52, '../images/markers/sun.png'],
+                               ['F', 60, '../images/markers/snow.png'],
+                               ['G', -48, '../images/markers/sun.png']],
+                        markers: {
+                            offset: 20,
+                            type: 'image',
+                            strokeStyle: 'black'
+                        }
+                    }
+                ]
+            });
+        chart.write('container');
+    </script>
+
+</head>
+<body>
+    <div>
+        <div id="container" style="width: 500px; height: 300px;">
+        </div>
+    </div>
+</body>
+</html>

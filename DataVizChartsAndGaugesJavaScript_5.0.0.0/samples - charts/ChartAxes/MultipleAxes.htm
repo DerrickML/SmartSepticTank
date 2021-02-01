@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+    Multiple Axes Example - JavaScript Chart by DataViz Charts
+</title>
+	<link rel="stylesheet" type="text/css" href="../../css/dataviz.chart.css" />
+	<link rel="stylesheet" type="text/css" href="../../themes/le-frog/styles.css" />
+	<script src="../../js/dataviz.chart.min.js" type="text/javascript"></script>
+	
+    <script lang="javascript" type="text/javascript">
+        
+            var chart = new DataViz.Chart({
+                title: { text: 'Multiple Axes' },
+                animation: { duration: 1 },
+                axes: [
+                    {
+                        name: 'y1',
+                        location: 'left'
+                    },
+                    {
+                        name: 'y2',
+                        location: 'left',
+                        strokeStyle: '#FCB441',
+                        majorGridLines: { strokeStyle: '#FCB441' },
+                        majorTickMarks: { strokeStyle: '#FCB441' }
+                    }
+                ],
+                series: [
+                    {
+                        type: 'column',
+                        axisY: 'y1',
+                        data: [['A', 1], ['B', 4], ['C', 3], ['D', 5], ['E', 2], ['F', 1]]
+                    },
+                    {
+                        type: 'line',
+                        axisY: 'y2',
+                        data: [['A', 40], ['B', 60], ['C', 62], ['D', 52], ['E', 70], ['F', 75]]
+                    }
+                ]
+            });
+        chart.write('container');
+    </script>
+
+</head>
+<body>
+    <div>
+        <div id="container" style="width: 500px; height: 300px;"></div>
+    </div>
+</body>
+</html>

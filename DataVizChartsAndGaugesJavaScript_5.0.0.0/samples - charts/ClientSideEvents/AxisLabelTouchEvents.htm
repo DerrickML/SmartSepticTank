@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	AxisLabel Touch Events Example - JavaScript Chart by DataViz Charts
+</title>
+	<link rel="stylesheet" type="text/css" href="../../css/dataviz.chart.css" />
+	<link rel="stylesheet" type="text/css" href="../../themes/le-frog/styles.css" />
+	<script src="../../js/dataviz.chart.min.js" type="text/javascript"></script>
+	
+	<script lang="javascript" type="text/javascript">
+
+		var chart = new DataViz.Chart({
+			title: "AxisLabel Touch Events",
+			legend: { visible: false },
+			animation: { duration: 1 },
+			axes: [
+				{
+					location: 'left',
+					labels: { cursor: 'pointer' }
+				},
+				{
+					location: 'bottom',
+					labels: { cursor: 'pointer' }
+				}
+			],
+			series: [
+				{
+					type: 'column',
+					title: 'Column',
+					data: [['A', 46], ['B', 35], ['C', 68], ['D', 30],
+						   ['E', 27], ['F', 85], ['D', 43], ['H', 29]]
+				}
+			]
+		});
+		chart.write('container');
+
+		chart.addEventListener('axisLabelTouchStart', function (e, data) {
+			var eventsDiv = document.getElementById('eventsDiv');
+			eventsDiv.innerHTML += '<div>axisLabelTouchStart</div>';
+			eventsDiv.scrollTop = eventsDiv.scrollHeight;
+
+			displayDataOptions(data);
+		});
+
+		chart.addEventListener('axisLabelTouchMove', function (e, data) {
+			var eventsDiv = document.getElementById('eventsDiv');
+			eventsDiv.innerHTML += '<div>axisLabelTouchMove</div>';
+			eventsDiv.scrollTop = eventsDiv.scrollHeight;
+		});
+
+		chart.addEventListener('axisLabelTouchEnd', function (e, data) {
+			var eventsDiv = document.getElementById('eventsDiv');
+			eventsDiv.innerHTML += '<div>axisLabelTouchEnd</div>';
+			eventsDiv.scrollTop = eventsDiv.scrollHeight;
+		});
+
+
+		function displayDataOptions(data) {
+			var list = document.getElementById('listBlock');
+
+			list.innerHTML = '<li>data.text=' + data.text + '</li>' +
+							'<li>data.chart=' + data.chart + '</li>' +
+							'<li>data.axis=' + data.axis + '</li>' +
+							'<li>data.shape=' + data.shape + '</li>';
+		}
+	</script>
+
+</head>
+<body>
+	<div>
+		<table>
+			<tr>
+				<td>
+					<div id="container" style="width: 400px; height: 300px;">
+					</div>
+				</td>
+				<td>
+					<b>Events:</b><br />
+					<div id="eventsDiv" class="box" style="width: 160px; height: 250px; overflow: auto; border: 1px solid #E2EFDE; padding: 10px">
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<b>Event 'data' parameter contains:</b>
+		<ul id='listBlock'>
+		</ul>
+	</div>
+</body>
+</html>

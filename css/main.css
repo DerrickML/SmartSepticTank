@@ -1,0 +1,238 @@
+
+* {
+    font-family: verdana;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #eee;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+nav {
+    background: #444;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    display: block;
+    padding: 14px;
+}
+
+nav a:hover {
+    background-color: #666;
+}
+
+/*********************************
+** Styles for large screens
+*/
+@media screen and (min-width: 768px) {
+    nav ul {
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    nav li {
+        flex: 1 1 0;
+    }
+    
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

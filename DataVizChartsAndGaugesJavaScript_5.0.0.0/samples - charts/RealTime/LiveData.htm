@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	Live Data Example - JavaScript Chart by DataViz Charts
+</title>
+	<link rel="stylesheet" type="text/css" href="../../css/dataviz.chart.css" />
+	<link rel="stylesheet" type="text/css" href="../../themes/le-frog/styles.css" />
+	<script src="../../js/dataviz.chart.min.js" type="text/javascript"></script>
+	
+	<script lang="javascript" type="text/javascript">
+		var data = [];
+		var yValue = 20;
+
+		for (var i = 0; i < 40; i++) {
+			yValue += Math.round(Math.random() * 20 - 10);
+			data.push([i, yValue]);
+		}
+
+		var state = {
+			title: { text: 'Live Data' },
+			shadows: {
+				enabled: true
+			},
+			series: [
+				{
+					type: 'area',
+					data: data
+				}
+			]
+		};
+
+		var chart = new DataViz.Chart(state);
+		chart.write('container');
+
+		updateChart();
+
+		function updateChart() {
+
+			yValue += Math.round(Math.random() * 20 - 10);
+
+			// remove the first element
+			data.splice(0, 1);
+			// add a new element
+			data.push([i++, yValue]);
+
+			chart.setState(state);
+
+			setTimeout("updateChart()", 500);
+		}
+	</script>
+
+</head>
+<body>
+	<div>
+		<div id="container" style="width: 500px; height: 300px;">
+		</div>
+	</div>
+</body>
+</html>

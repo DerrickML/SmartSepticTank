@@ -1,0 +1,235 @@
+.dv-chart {
+	position: relative;
+}
+
+.dv-chart-stretch {
+	width: 100%;
+	height: 100%;
+}
+
+.dv-chart .dv-chart-toolbar {
+	position: absolute;
+	margin: 0;
+	padding: 2px;
+	list-style-type: none;
+	white-space: nowrap;
+}
+
+	.dv-chart .dv-chart-toolbar li {
+		display: inline-block;
+		vertical-align: top;
+		margin: 0 2px;
+		padding: 2px 0;
+		cursor: pointer;
+	}
+
+	.dv-chart .dv-chart-toolbar span.ui-icon {
+		float: left;
+		margin: 0 2px;
+	}
+
+.dv-chart .dv-chart-toolbar-separator {
+	height: 16px;
+	width: 1px;
+}
+
+.dv-chart .dv-chart-tooltip {
+	position: absolute;
+	white-space: nowrap;
+	padding: .2em .4em;
+	z-index: 9999;
+	border: 1px solid #dddddd;
+	color: #333333;
+	background: white;
+	border-radius: 4px;
+	box-shadow: 0 0 5px #aaa;
+	border-width: 2px;
+	background-image: none;
+}
+
+
+.dv-rangeslider {
+	position: relative;
+}
+
+.dv-rangeslider-stretch {
+	width: 100%;
+	height: 100%;
+}
+
+.dv-rangeslider .dv-rangeslider-arrow-left {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 18px;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+.dv-rangeslider .dv-rangeslider-arrow-icon-left {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.dv-rangeslider .dv-rangeslider-arrow-right {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 18px;
+	cursor: pointer;
+}
+
+.dv-rangeslider .dv-rangeslider-arrow-icon-right {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.dv-rangeslider .dv-rangeslider-handle-left {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 12px;
+	cursor: ew-resize;
+}
+
+.dv-rangeslider .dv-rangeslider-handle-icon-left {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.dv-rangeslider .dv-rangeslider-handle-right {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 12px;
+	cursor: ew-resize;
+}
+
+.dv-rangeslider .dv-rangeslider-handle-icon-right {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.dv-rangeslider .dv-rangeslider-slider-horizontal {
+	position: absolute;
+	left: 0;
+	top: 0;
+	cursor: move;
+	cursor: grab;
+	cursor: -moz-grab;
+}
+
+.dv-rangeslider .dv-rangeslider-slider-horizontal-dragging {
+	cursor: -moz-grabbing;
+	cursor: grabbing;
+}
+
+.dv-rangeslider .dv-rangeslider-background-horizontal {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.dv-rangeslider .dv-rangeslider-background-horizontal-left {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.dv-rangeslider .dv-rangeslider-background-horizontal-right {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.dv-rangeslider .dv-rangeslider-arrow-bottom {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 18px;
+	cursor: pointer;
+}
+
+.dv-rangeslider .dv-rangeslider-arrow-icon-bottom {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.dv-rangeslider .dv-rangeslider-arrow-top {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 18px;
+	cursor: pointer;
+}
+
+.dv-rangeslider .dv-rangeslider-arrow-icon-top {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.dv-rangeslider .dv-rangeslider-handle-bottom {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 12px;
+	cursor: ns-resize;
+}
+
+.dv-rangeslider .dv-rangeslider-handle-icon-bottom {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.dv-rangeslider .dv-rangeslider-handle-top {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 12px;
+	cursor: ns-resize;
+}
+
+.dv-rangeslider .dv-rangeslider-handle-icon-top {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.dv-rangeslider .dv-rangeslider-slider-vertical {
+	position: absolute;
+	left: 0;
+	top: 0;
+	cursor: move;
+	cursor: grab;
+	cursor: -moz-grab;
+}
+
+.dv-rangeslider .dv-rangeslider-slider-vertical-dragging {
+	cursor: -moz-grabbing;
+	cursor: grabbing;
+}
+
+.dv-rangeslider .dv-rangeslider-background-vertical {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.dv-rangeslider .dv-rangeslider-background-vertical-bottom {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.dv-rangeslider .dv-rangeslider-background-vertical-top {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
